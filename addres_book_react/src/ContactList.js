@@ -1,9 +1,13 @@
 import React from 'react'
+import ContactCard from './ContactCard'
 
 const ContactList = () => {
   return (
     <div>
-      ContactList
+      <h4>Contact List</h4>
+      <div>
+        <ContactCard />
+      </div>
     </div>
   )
 }

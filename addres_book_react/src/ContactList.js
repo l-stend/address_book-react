@@ -12,8 +12,8 @@ const ContactList = () => {
       {list.map((card) => {
         const { id } = card
         return (
-          <div key={id}>
-            <ContactCard />
+          <div key={id} className='card'>
+            <ContactCard {...card}/>
           </div>
         )
       })}

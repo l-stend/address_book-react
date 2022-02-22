@@ -14,8 +14,6 @@ const getLocalStorage = () => {
   }
 }
 
-
-
 const AppProvider = ({children}) => {
   // forms toggling
   const [showAdd, setShowAdd] = useState(false);
@@ -98,7 +96,7 @@ const AppProvider = ({children}) => {
     list,
     setList,
     message, 
-    setMessage
+    setMessage, 
     }}>
         {children}
     </AppContext.Provider>)

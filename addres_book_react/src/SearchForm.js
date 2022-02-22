@@ -2,9 +2,9 @@ import React from 'react'
 
 const SearchForm = () => {
   return (
-    <div>
+    <form className='search-form'>
       SearchForm
-    </div>
+    </form>
   )
 }
 

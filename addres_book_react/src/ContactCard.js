@@ -1,26 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useGlobalContext } from './context'
 
-const ContactCard = () => {
+const ContactCard = ({id, firstName, lastName, number, city}) => {
+  const {list, setList} = useGlobalContext();
+  const [isCardOpen, setIsCardOpen] = useState(false);
+
+  //remove contact
+  const removeContact = (id) => {
+    const newList = list.filter((card) => card.id !== id);
+    setList(newList);
+  }  
   return (
     <article className='card'>
       <ul>
         <li>
-            <span className='label'>name</span>
-            <span>   value</span>
+            <span className='label'>name: </span>
+            <span>   {firstName}</span>
+            <span>
+              <button type='button' onClick={() => setIsCardOpen(!isCardOpen)}>open</button>
+            </span>
         </li>
-        <li>
-            <span className='label'>surname</span>
-            <span>   value</span>
-        </li>
-        <li>
-            <span className='label'>number</span>
-            <span>   value</span>
-        </li>
-        <li>
-            <span className='label'>city</span>
-            <span>   value</span>
-        </li>
-        
+        {isCardOpen && 
+        <div>
+          <li>
+            <span className='label'>surname: </span>
+            <span>   {lastName}</span>
+          </li>
+          <li>
+            <span className='label'>number: </span>
+            <span>   {number}</span>
+          </li>
+          <li>
+            <span className='label'>city: </span>
+            <span>   {city}</span>
+          <div>
+            <button type='button' onClick={() => removeContact(id)}>Remove</button>
+          </div>
+          </li>
+        </div>}
       </ul>
     </article>
   )

@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import { useGlobalContext } from './context'
 
 const ContactCard = ({id, firstName, lastName, number, city}) => {
-  const {list, setList} = useGlobalContext();
+  const {list, setList, searchResults, setSearchResults} = useGlobalContext();
   const [isCardOpen, setIsCardOpen] = useState(false);
 
   //remove contact
   const removeContact = (id) => {
     const newList = list.filter((card) => card.id !== id);
     setList(newList);
+    const newResults = searchResults.filter((card) => card.id !== id);
+    setSearchResults(newResults);
   }  
   return (
     <article className='card'>

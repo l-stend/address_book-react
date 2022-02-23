@@ -23,7 +23,6 @@ const AddForm = () => {
       e.preventDefault();
       if (firstName && lastName && number && city) {
         const newCard = {id: uniqid(), firstName, lastName, number, city};
-        console.log(newCard);
         setList([...list, newCard]);
         clearForm();
         setMessage('contact added')

@@ -26,11 +26,15 @@ const AppProvider = ({children}) => {
   const [lastName, setLastName] = useState('');
   const [number, setNumber] = useState('')
   const [city, setCity] = useState('');
-
   const [message, setMessage] = useState('');
+
+  //search
+  const [searchResults, setSearchResults] = useState([])
+  const [searchValue, setSearchValue] = useState('');
 
   //forms toggling funcs asdasd
   const openAddForm = () => {
+    setSearchValue('')
     setShowSearch(false)
     setShowAdd(true)
   }
@@ -38,6 +42,12 @@ const AppProvider = ({children}) => {
   const openSearchForm = () => {
     setShowAdd(false)
     setShowSearch(true)
+  }
+
+  const showList = () => {
+    setSearchValue('')
+    setShowAdd(false)
+    setShowSearch(false)
   }
 
   //forms message timer
@@ -83,6 +93,7 @@ const AppProvider = ({children}) => {
     openAddForm,
     showSearch,
     openSearchForm,
+    showList,
     firstName,
     setFirstName,
     lastName,
@@ -97,6 +108,10 @@ const AppProvider = ({children}) => {
     setList,
     message, 
     setMessage, 
+    searchResults, 
+    setSearchResults,
+    searchValue, 
+    setSearchValue,
     }}>
         {children}
     </AppContext.Provider>)

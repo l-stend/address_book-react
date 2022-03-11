@@ -1,12 +1,7 @@
-<li>
-            <span className='label'>surname: </span>
-            <span>   {lastName}</span>
-        </li>
-        <li>
-            <span className='label'>number: </span>
-            <span>   {number}</span>
-        </li>
-        <li>
-            <span className='label'>city: </span>
-            <span>   {city}</span>
-        </li>
+X   list && list.map... non dava errore
+X   sistema gli stati nel context e prova a renderizzare la lista filtrata(quando presente) invece della completa
+X   forse è meglio usare il terimine di ricerca come trigger per render lista filtrata
+
+O   tasto open deve diventare close
+X   tasto start search bob serve
+O   pulire commenti e scarti di codice

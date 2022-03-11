@@ -40,7 +40,6 @@ const SearchForm = () => {
           <label htmlFor='search'>Search</label>
           <input type='text' value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}></input>
-          <button type='submit'>start search</button>
         </div>
         <div className='form-item'>
           <span>
